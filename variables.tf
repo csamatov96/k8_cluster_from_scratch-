@@ -1,7 +1,4 @@
-variable "max_size" {
-    default = "33"
-}
-variable "min_size" {
-    default = "3"
-}
+variable "max_size" {}
+variable "min_size" {}
+
 
