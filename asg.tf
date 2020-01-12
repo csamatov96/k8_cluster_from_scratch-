@@ -186,7 +186,7 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-csamatov-net" {
 resource "aws_autoscaling_group" "nodes-csamatov-net" {
   name                 = "nodes.csamatov.net"
   launch_configuration = "${aws_launch_configuration.nodes-csamatov-net.id}"
-  max_size             = "${max_size_for_nodes}"
+  max_size             = "${max_size_for_nodes}" #no var. need to be declared #################################
   min_size             = "${min_size_for_nodes}"
   vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-csamatov-net.id}", "${aws_subnet.eu-west-1b-csamatov-net.id}", "${aws_subnet.eu-west-1c-csamatov-net.id}"]
 
