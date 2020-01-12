@@ -6,5 +6,5 @@ s3_folder_type = "state"                   #Will be used to set backend.tf
 s3_tfstate_file = "dev.k8cluster.infrastructure.tfstate" #Will be used to set backend.tf
 
 #worker nodes 
-max_size_for_nodes = "33"
-min_size_for_nodes = "3"
+max_size = "33"
+min_size = "3"
