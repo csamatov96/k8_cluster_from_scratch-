@@ -182,11 +182,12 @@ resource "aws_autoscaling_group" "master-eu-west-1c-masters-csamatov-net" {
   enabled_metrics     = ["GroupDesiredCapacity", "GroupInServiceInstances", "GroupMaxSize", "GroupMinSize", "GroupPendingInstances", "GroupStandbyInstances", "GroupTerminatingInstances", "GroupTotalInstances"]
 }
 
+##################WORKER NODES############################################
 resource "aws_autoscaling_group" "nodes-csamatov-net" {
   name                 = "nodes.csamatov.net"
   launch_configuration = "${aws_launch_configuration.nodes-csamatov-net.id}"
-  max_size             = 3
-  min_size             = 3
+  max_size             = "${var.max_size_for_nodes}"
+  min_size             = "${var.min_size_for_nodes}"
   vpc_zone_identifier  = ["${aws_subnet.eu-west-1a-csamatov-net.id}", "${aws_subnet.eu-west-1b-csamatov-net.id}", "${aws_subnet.eu-west-1c-csamatov-net.id}"]
 
   tag = {
